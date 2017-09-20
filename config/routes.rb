@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
+  jsonapi_resources :books
+  jsonapi_resources :libraries
+  jsonapi_resources :authors
   resources :libraries
   resources :authors
   resources :books
   resources :invitations
    namespace :admin do
+      jsonapi_resources :books
+      jsonapi_resources :libraries
+      jsonapi_resources :authors
       resources :invitations
-      resources :libraries do
-         resources :books, path: 'relationships/books'
-        end
-      resources :authors do
-         resources :books, path: 'relationships/books'
-        end
+      resources :libraries
+      resources :authors
       resources :books
    end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -49,7 +49,7 @@ class BooksController < ApplicationController
       ActiveModelSerializers::Deserialization
           .jsonapi_parse(
               params, only: [
-                  :id, :title, :author, :author_id, :library, :library_id, :name, :id, :authors, :books
+                  :id, :title, :author, :author_id, :library, :library_id, :name, :id, :authors, :books, :book, :book_id, :links
                   ]
                   )
     end
